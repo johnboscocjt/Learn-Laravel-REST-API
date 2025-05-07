@@ -16,10 +16,12 @@ return Application::configure(basePath: dirname(__DIR__))
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
         ]);
 
-        //  $middleware->validateCsrfTokens(except: [
+
+        // // If you need to exclude CSRF protection for specific routes
+        // $middleware->validateCsrfTokens(except: [
+        //     // 'api/login',  // Only if you're keeping login in API routes
         //     'login'       // If you have it in web routes (not recommended)
         // ]);
-
 
 
         $middleware->alias([

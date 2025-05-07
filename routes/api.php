@@ -10,21 +10,21 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // http:: //badger.test/api/v1/articles
-// Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function (){
-//     // Articles
-//     Route::apiResource('/articles', ArticleController::class);
-
-//     // Authors
-//     Route::get('/authors/{user]', [AuthorController::class, 'show'])->name('authors');
-// });
-
-
-// sanctum disabled
-// http://127.0.0.1:8000/api/v1/articles
-Route::group(['prefix' => 'v1'], function (){
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function () {
     // Articles
     Route::apiResource('/articles', ArticleController::class);
 
     // Authors
     Route::get('/authors/{user]', [AuthorController::class, 'show'])->name('authors');
 });
+
+
+// sanctum disabled
+// http://127.0.0.1:8000/api/v1/articles
+// Route::group(['prefix' => 'v1'], function (){
+//     // Articles
+//     Route::apiResource('/articles', ArticleController::class);
+
+//     // Authors
+//     Route::get('/authors/{user]', [AuthorController::class, 'show'])->name('authors');
+// });Route::post('/login', [AuthenticatedSessionController::class, 'store']);
